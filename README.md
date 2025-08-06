@@ -14,3 +14,13 @@
     - share: The share of the product in the total electricity generation for the country in decimal format
 
 **Note**: Dataset was filtered to include only European countries.
+
+## Handling Negative Values
+- ‘Electricity trade’ and ‘Oil’ are the only two products showing negative values.
+- These negative values appear in:
+    - value (monthly GWh generation)
+    - yeartodate
+    - previousyeartodate
+    - share
+- Negative values in 'Electricity trade' represents import/export flows, and negative values likely indicate net electricity exports (more electricity sent out than received).
+- Negative values in 'Oil' are ikely due to data reporting errors or inconsistencies, as negative electricity generation is not logically valid in this context. After considering domain knowledge and consulting with an industry expert, we decided to remove rows where the product is 'Oil' and any of the above columns contain negative values.
