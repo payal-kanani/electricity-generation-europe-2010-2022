@@ -23,7 +23,7 @@
     - previousyeartodate
     - share
 - Negative values in 'Electricity trade' represents import/export flows, and negative values likely indicate net electricity exports (more electricity sent out than received).
-- Negative values in 'Oil' are ikely due to data reporting errors or inconsistencies, as negative electricity generation is not logically valid in this context. After considering domain knowledge and consulting with an industry expert, we decided to remove rows where the product is 'Oil' and any of the above columns contain negative values.
+- Negative values in 'Oil' are likely due to data reporting errors or inconsistencies, as negative electricity generation is not logically valid in this context. After considering domain knowledge and consulting with an industry expert, we decided to remove rows where the product is 'Oil' and any of the above columns contain negative values.
 
 ## Outlier Handling
 - During data exploration, outliers were detected in value, yeartodate, previousyeartodate, share columns. After careful consideration, outliers were retained in the dataset.
@@ -34,3 +34,7 @@
     - Cross-border electricity trade or import/export anomalies
 - These data points are not errors, but rather valuable indicators of unique events and trends.
 - Removing them would risk hiding meaningful insights that could improve the quality of the analysis.
+
+
+
+
