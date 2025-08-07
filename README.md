@@ -15,6 +15,20 @@
 
 **Note**: Dataset was filtered to include only European countries.
 
+## Business Requirements
+- Identify and visualize energy production trends across Europe from 2010 to 2022.
+- Provide insights into the shift from fossil fuels to renewable sources.
+- Predict electricity production for a given country, month, and energy source.
+- Group countries by energy behaviour using unsupervised learning.
+
+## Hypotheses and Validation
+- Renewable energy production has increased significantly in Europe since 2010.
+    - Validation: Year-wise trend analysis for Wind, Solar, Hydro energy.
+- Renewable sources like wind and solar show an upward trend over the years.
+    - Validation: Line plots and trend analysis of Wind and Solar electricity generation over time.
+- Electricity production can be predicted based on time, country, and product type.
+    - Validation: Regression modeling (e.g., Random Forest Regressor).
+
 ## Handling Negative Values
 - ‘Electricity trade’ and ‘Oil’ are the only two products showing negative values.
 - These negative values appear in:
