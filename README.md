@@ -18,6 +18,7 @@
 ## Business Requirements
 - Identify and visualize energy production trends across Europe from 2010 to 2022.
 - Provide insights into the shift from fossil fuels to renewable sources.
+- predict when will renewables surpass non-renewables in Europe
 - Predict electricity production for a given country, month, and energy source.
 - Group countries by energy behaviour using unsupervised learning.
 
