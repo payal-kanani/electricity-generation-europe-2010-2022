@@ -91,47 +91,113 @@
         * Used to communicate results effectively to stakeholders through dynamic and intuitive visualizations.
 
 
-## The rationale to map the business requirements to the Data Visualisations
-* List your business requirements and a rationale to map them to the Data Visualisations
+## Mapping Business Requirements to Visuals
+
+| Business Requirement                                                            | Visualization / Technique                                            |
+|---------------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Identify and visualize energy production trends across Europe from 2010 to 2022 | Line plots, stacked area/bar charts                                  |
+| Provide insights into the shift from fossil fuels to renewable sources          | Stacked bar charts, area charts                                      |
+| Predict when renewables will surpass non-renewables in Europe                   | Regression models (Linear, Polynomial regression)                    |
+| Predict electricity production for a given country, month, and energy source    | Random Forest regression model                                       |
 
 ## Analysis techniques used
-* List the data analysis methods used and explain limitations or alternative approaches.
-* How did you structure the data analysis techniques. Justify your response.
-* Did the data limit you, and did you use an alternative approach to meet these challenges?
+* Exploratory Data Analysis (EDA): 
+    * Used descriptive statistics and visualizations (line plots, bar charts, area charts) to understand energy production trends and shifts over time.
+    * Limitations: EDA is descriptive and does not provide predictive insights or causal inference.
+* Regression Models (Linear and Polynomial): 
+    * Applied to model and forecast renewable energy trends, capturing linear and nonlinear growth patterns.
+    * Limitations: These models assume certain relationships and may not handle complex interactions or external factors influencing energy production.
+* Random Forest Regression: 
+    * Employed for detailed predictions of electricity production by country, month, and energy source, capturing nonlinearities and feature interactions.
+    * Limitations: Can be computationally intensive and less interpretable compared to simpler regression models.
 * How did you use generative AI tools to help with ideation, design thinking and code optimisation?
 
+* Structure and Justification of Techniques
+    * The analysis was structured progressively: 
+        * beginning with EDA to explore and understand data patterns, followed by regression models to forecast overall trends, and finally using Random Forest for granular, accurate predictions. 
+        * This approach ensured both interpretability and predictive power, balancing simplicity and complexity appropriately.
+
+* Data Limitations and Alternative Approaches
+    * Data limitations included sparsity in monthly data for some countries and occasional missing values. 
+    * To address this, aggregation to yearly levels was performed where appropriate, and model complexity was adjusted to prevent overfitting. 
+    * Missing data was handled via imputation to maintain data quality.
+
+* Use of Generative AI Tools
+    * Generative AI tools assisted by suggesting analysis approaches, generating code snippets for data cleaning, visualization, and modeling, and optimizing code efficiency. 
+    * They supported design thinking by offering alternative perspectives and helped accelerate development while ensuring best coding practices.
+
+
 ## Ethical considerations
-* Were there any data privacy, bias or fairness issues with the data?
-* How did you overcome any legal or societal issues?
+* Data Privacy, Bias, and Fairness
+    * The dataset used contains aggregated energy production data at the country and year level, which does not involve any personal or sensitive information, thereby minimizing data privacy concerns. 
+    * However, potential biases could arise from uneven data quality or coverage across different countries and time periods, which might affect model fairness and generalizability.
+* Addressing Legal and Societal Issues
+    * To mitigate bias and ensure fairness, data cleaning steps included careful handling of missing or incomplete data to avoid skewed results. 
+    * All data sources used are publicly available and compliant with legal and ethical standards. 
+    * Insights were communicated transparently to avoid misinterpretation or misuse. 
+    * The project respects environmental and societal implications by focusing on promoting renewable energy awareness and supporting informed decision-making.
 
 ## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
-* How were data insights communicated to technical and non-technical audiences?
-* Explain how the dashboard was designed to communicate complex data insights to different audiences. 
+**Note:**
+You can access the electricity_production_pverview_in_europe_dashboard.pbix in the dashboard folder. Please download the file from this folder to view and interact with the dashboard.
+
+#### Dashboard Pages and Content
+* Cover Page:
+    * This page features the dashboard title and key objectives. It also includes project Description.
+* Electricity Generation Overview: 
+    * This page provides a high-level summary of electricity production across Europe with the following visuals and interactive elements.
+    * Map Visual: Displays total electricity generation by country, offering geographic insights into production distribution.
+    * Column Chart: Shows total electricity generated by each country, allowing easy comparison.
+    * Donut Chart: Represents the breakdown of total electricity generated by different energy types (renewable and non-renewable).
+    * Cards:
+        * Share of renewable energy as a percentage of total production.
+        * Total electricity generated across all countries.
+    * Year Slicer: Enables filtering data by year from 2010 to 2022, allowing users to explore trends over time interactively.
+
+* Breakdown by Energy type: 
+    * This page provides detailed insights into electricity production by energy source with the following visualizations and controls.
+    * Stacked Column Chart: Visualizes the count of different energy types, showing the composition and contribution of each type.
+    * Clustered Column Chart: Displays the total electricity generated by each product/energy source, enabling side-by-side comparison.
+    * Slicers:
+        * Country slicer to filter data by selected countries.
+        * Year slicer to filter data by year, allowing users to focus on specific time periods.
+    
+* Trend over Time:
+    * This page features a line chart showing the total electricity generated over time, broken down by electricity generation source.
+    * Users can interactively filter the data using slicers for:
+        * Year
+        * Energy type
+        * Country
+    * This setup allows detailed exploration of how energy production trends have evolved across different sources and regions from 2010 to 2022.
+
+* Year on Year Comparison: 
+    * This page compares electricity generation performance across years with the following visualizations.
+    * Clustered Column Chart: Displays total electricity generated over time, enabling comparison between different years.
+    * Area Chart: Shows Year-to-Date (YTD) and Previous Year-to-Date electricity generation trends, making it easy to track annual changes and growth patterns.
+    * Slicer: Country name slicer to filter and analyze the data for a specific country.
+
+* Iterative Development and Feature Updates:
+    * During development, some visualizations were refined based on user feedback and data exploration.
+
+* Communication of Data Insights:
+    * The dashboard was designed with both technical and non-technical audiences in mind. 
+    * For technical users, detailed charts and statistical summaries provide in-depth analysis. 
+    * For non-technical stakeholders, simplified visualizations, KPIs, and clear annotations highlight key messages. 
+    * Interactive elements enable users to explore data at their own pace and according to their interest.
 
 ## Unfixed Bugs
-* Please mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
-* Did you recognise gaps in your knowledge, and how did you address them?
-* If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
+* Granular Hourly or Daily Data Unavailable
+    * Description: The dataset only contains annual electricity generation data, which limits the ability to analyze seasonal or monthly trends.
+    * Reason Unfixed: This limitation comes from the source dataset, and no public API with historical hourly/daily breakdowns for all European countries was identified during this project.
+* Knowledge Gaps Identified & Addressed
+    * Predictive Modelling in Jupyter + Dashboard Integration: Learned how to export predictions from Python to CSV and then connect them to Power BI for visualization.
+    * Predictive Modelling in Jupyter + Dashboard Integration: Learned how to export predictions from Python to CSV and then connect them to Power BI for visualization.
+
+
 
 ## Development Roadmap
 * What challenges did you face, and what strategies were used to overcome these challenges?
 * What new skills or tools do you plan to learn next based on your project experience? 
-
-## Deployment
-### Heroku
-
-* The App live link is: https://YOUR_APP_NAME.herokuapp.com/ 
-* Set the runtime.txt Python version to a [Heroku-20](https://devcenter.heroku.com/articles/python-support#supported-runtimes) stack currently supported version.
-* The project was deployed to Heroku using the following steps.
-
-1. Log in to Heroku and create an App
-2. From the Deploy tab, select GitHub as the deployment method.
-3. Select your repository name and click Search. Once it is found, click Connect.
-4. Select the branch you want to deploy, then click Deploy Branch.
-5. The deployment process should happen smoothly if all deployment files are fully functional. Click now the button Open App on the top of the page to access your App.
-6. If the slug size is too large then add large files not required for the app to the .slugignore file.
 
 
 ## Main Data Analysis Libraries
