@@ -20,7 +20,6 @@
 - Provide insights into the shift from fossil fuels to renewable sources.
 - predict when will renewables surpass non-renewables in Europe
 - Predict electricity production for a given country, month, and energy source.
-- Group countries by energy behaviour using unsupervised learning.
 
 ## Hypotheses and Validation
 - Renewable energy production has increased significantly in Europe since 2010.
@@ -28,7 +27,7 @@
 - Renewable sources like wind and solar show an upward trend over the years.
     - Validation: Line plots and trend analysis of Wind and Solar electricity generation over time.
 - Electricity production can be predicted based on time, country, and product type.
-    - Validation: Regression modeling (e.g., Random Forest Regressor).
+    - Validation: Regression modeling.
 
 ## Handling Negative Values
 - ‘Electricity trade’ and ‘Oil’ are the only two products showing negative values.
