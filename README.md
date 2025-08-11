@@ -2,7 +2,7 @@
 
 **Electricity Generation Analysis in Europe** A comprehensive data analytics and visualization project exploring and predicting monthly electricity production across European countries between 2010 and 2022.
 
-![Cover photo] (../data/images/dataset-cover.jpg)
+![Dataset Cover](data/images/dataset-cover.jpg)
 
 ## Dataset Content
 * The cleaned dataset contains 107726 monthly records of electricity generation (in GWh) across European countries from 2010 to 2022, broken down by energy source (Hydro, Wind, Solar, etc.). 
