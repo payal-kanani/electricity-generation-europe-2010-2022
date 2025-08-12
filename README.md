@@ -1,6 +1,6 @@
 # Electricity Generation Analysis in Europe: 2010–2022
 
-**Electricity Generation Analysis in Europe** A comprehensive data analytics and visualization project exploring and predicting monthly electricity production across European countries between 2010 and 2022.
+**Electricity Generation Analysis in Europe** This project analyzes electricity generation across Europe from 2010 to 2022, focusing on trends, shifts in energy sources, and forecasting future developments. The dataset contains over 120,000 monthly records of electricity production by source (renewable and non-renewable) for 34 European countries.
 
 ![Dataset Cover](data/images/dataset-cover.jpg)
 
@@ -13,21 +13,17 @@ Below is a description of each column in the electricity production dataset:
 | **Column Name**         | **Description**                                                                 |
 |-------------------------|---------------------------------------------------------------------------------|
 | Country                 | Name of the country                                                             |
-| Code_time               | A code that represents the month and year (e.g., JAN2010 for January 2010)     |
-| Time                    | The month and year in a human-readable format (e.g., January 2010)             |
+| Code_time               | A code that represents the month and year (e.g., JAN2010 for January 2010)      |
+| Time                    | The month and year in a human-readable format (e.g., January 2010)              |
 | Year                    | The year of the data point                                                      |
 | Month                   | The month of the data point as a number (1-12)                                  |
-| Month_name             | The month of the data point as a string (e.g., January)                         |
-| Product                | The type of energy product (e.g., Hydro, Wind, Solar)                           |
-| Value                  | Electricity generated in gigawatt-hours (GWh)                                   |
-| Display_order          | Order in which the products should be displayed                                 |
-| Yeartodate             | Electricity generated YTD (Year-To-Date) for the current year in GWh           |
-| Previousyeartodate     | Electricity generated YTD for the previous year in GWh                          |
-| share                  | Product’s share of total electricity generation in decimal format (e.g., 0.25)  |
-
-- **Country** : Austria, Belgium, Bulgaria, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Iceland, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, North Macedonia, Norway, Poland, Portugal, Republic of Turkiye, Romania, Serbia, Slovak Republic, Slovenia, Spain, Sweden, Switzerland, United Kingdom.
-
-- **Products(Type of electricity generation)** : Hydro, Wind, Solar, Geothermal, Other renewables, Nuclear, Total combustible fuels, Coal, Oil, Natural gas, Combustible renewables, Other combustible non-renewables, Not specified, Net electricity production, Total imports, Total exports, Electricity supplied, Used for pumped storage, Distribution losses, Final consumption, Electricity trade, Renewables, Non-renewables, Others, Other renewables aggregated, Low carbon, Fossil fuels.
+| Month_name              | The month of the data point as a string (e.g., January)                         |
+| Product                 | The type of energy product (e.g., Hydro, Wind, Solar)                           |
+| Value                   | Electricity generated in gigawatt-hours (GWh)                                   |
+| Display_order           | Order in which the products should be displayed                                 |
+| Yeartodate              | Electricity generated YTD (Year-To-Date) for the current year in GWh            |
+| Previousyeartodate      | Electricity generated YTD for the previous year in GWh                          |
+| Share                   | Product’s share of total electricity generation in decimal format (e.g., 0.25)  |
 
 **Note**: Dataset was filtered to include only European countries.
 
@@ -114,7 +110,7 @@ Below is a description of each column in the electricity production dataset:
 | Provide insights into the shift from fossil fuels to renewable sources          | Stacked bar charts, area charts                                      |
 | Predict when renewables will surpass non-renewables in Europe                   | Regression models (Linear, Polynomial regression)                    |
 | Predict electricity production for a given country, month, and energy source    | Random Forest regression model                                       |
-
+ 
 ## **Analysis techniques used**
 * **Exploratory Data Analysis (EDA):** 
     * Used descriptive statistics and visualizations (line plots, bar charts, area charts) to understand energy production trends and shifts over time.
@@ -183,7 +179,7 @@ You can access the electricity_production_pverview_in_europe_dashboard.pbix in t
 
 * **Year on Year Comparison:** 
     * This page compares electricity generation performance across years with the following visualizations.
-    * **Clustered Column Chart:** Displays total electricity generated over time, enabling comparison between different years.
+    * **Clustered Column Chart:** Displays total electricity generated over time by energy type, enabling comparison between different countries.
     * **Area Chart:** Shows Year-to-Date (YTD) and Previous Year-to-Date electricity generation trends, making it easy to track annual changes and growth patterns.
     * **Slicer:** Country name slicer to filter and analyze the data for a specific country.
 
